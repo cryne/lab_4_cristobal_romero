@@ -27,11 +27,32 @@ int main(int argc, char const *argv[])
 			char* array=new char[35];
 			cout<<"ingrese la palabra"<<endl;
 			cin>>array;
-			for (int i = 0; i < 35; ++i)
+			int tama=strlen(array);
+			char* array2=new char[35];	
+			strncpy(array2,array,tama-2);
+			if (array[tama-2]=='e'&&array[tama-1]=='r'||array[tama-2]=='i'&&array[tama-1]=='r'||array[tama-2]=='a'&&array[tama-1]=='r')
 			{
-				cout<<array[i];
+				if (array[tama-2]=='e')
+				{
+					cout<<array2<<"i"<<endl;
+					cout<<array2<<"o"<<endl;
+					cout<<array2<<"ere"<<endl;	
+				}
+				if (array[tama-2]=='i')
+				{
+					cout<<array2<<"i"<<endl;
+					cout<<array2<<"o"<<endl;
+					cout<<array2<<"ire"<<endl;	
+				}
+				if (array[tama-2]=='a')
+				{
+					cout<<array2<<"e"<<endl;
+					cout<<array2<<"o"<<endl;
+					cout<<array2<<"are"<<endl;	
+				}
 			}
-			cout<<endl;
+			
+			delete[] array2;
 			delete[] array;
 		}
 	}
