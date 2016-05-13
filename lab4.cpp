@@ -9,7 +9,7 @@ int main(int argc, char const *argv[])
 {
 	int opciones=0;
 	while(opciones!=3){
-		cout<<"ingrese la opcion a la que desea ingresar\n1-factorizar\n2-conjugar"<<endl;
+		cout<<"ingrese la opcion a la que desea ingresar\n1-factorizar\n2-conjugar\n3-salir"<<endl;
 		cin>>opciones;
 		if(opciones==1){
 			int size=3;
@@ -22,6 +22,17 @@ int main(int argc, char const *argv[])
 			cout<<"ingrese el C"<<endl;
 			cin>>array[2];
 			factorizar(array,size);
+			delete[] array;
+		}else if(opciones==2){
+			char* array=new char[35];
+			cout<<"ingrese la palabra"<<endl;
+			cin>>array;
+			for (int i = 0; i < 35; ++i)
+			{
+				cout<<array[i];
+			}
+			cout<<endl;
+			delete[] array;
 		}
 	}
 	return 0;
@@ -31,4 +42,5 @@ void factorizar(int* array,int size){
 	a=-1*(((-1*(double)array[1])+sqrt(pow((double)array[1],2)-4*(double)array[0]*(double)array[2]))/(2*(double)array[0]));
     b=-1*((-1*(double)array[1])-sqrt(pow((double)array[1],2)-4*(double)array[0]*(double)array[2]))/(2*(double)array[0]);
     cout<<array[0]<<"x^2+("<<array[1]<<")x+("<<array[2]<<")=(x+("<<a<<"))(x+("<<b<<"))"<<endl;
+
 }
